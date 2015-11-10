@@ -55,11 +55,11 @@ public class MainActivity extends AppCompatActivity {
                     Double width = Double.parseDouble(largura.getText().toString());
                     Double height = Double.parseDouble(altura.getText().toString());
 
-                    Double resultadoVolume = compri * width * height;
-                    Double resultadoPedra = (resultadoVolume * 0.09) / 0.23;
-                    Double resultadoAreia = (resultadoVolume * 0.072) / 0.23;
-                    Double resultadoAgua = (resultadoVolume * 22.5) / 0.23;
-                    Double resultadoCimento = resultadoVolume / 0.23;
+                    Double resultadoVolume = Math.ceil(compri * width * height);
+                    Double resultadoPedra = Math.ceil((resultadoVolume * 0.09) / 0.23);
+                    Double resultadoAreia = Math.ceil((resultadoVolume * 0.072) / 0.23);
+                    Double resultadoAgua = Math.ceil((resultadoVolume * 22.5) / 0.23);
+                    Double resultadoCimento = Math.ceil(resultadoVolume / 0.23);
 
                     volumeTextView.setText(Double.toString(resultadoVolume));
                     pedraTextView.setText(Double.toString(resultadoPedra));
